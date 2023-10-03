@@ -6,12 +6,7 @@ from  streamlit_autorefresh import st_autorefresh
 st.set_page_config(page_title="Olympic Selection Stats", layout="wide")
 st_autorefresh(interval=5000)#in ms
 
-[theme]
-primaryColor="#FF4B4B"
-backgroundColor="pink"
-secondaryBackgroundColor="#262730"
-textColor="#FAFAFA"
-font="sans serif"
+
 
 st.header(":blue[Laval Stats]")
 
