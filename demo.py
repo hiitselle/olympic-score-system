@@ -7,7 +7,7 @@ st.set_page_config(page_title="Olympic Selection Stats", layout="wide")
 st_autorefresh(interval=5000)#in ms
 
 
-st.header("Laval Stats")
+st.header(":blue[Laval Stats]")
 
 with st.sidebar:
     genderSel = st.selectbox(
