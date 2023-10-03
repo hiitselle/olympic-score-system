@@ -34,7 +34,7 @@ with st.expander("Current Leader"):
     if(df['Worst Case'].iloc[index] == "1"):
         st.write(df['Name'].iloc[index] + " :green[Winner]")
     else:
-        st.write(df['Name'].iloc[index] + " is leading & is Beatable!")
+        st.write(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
 
 
 def generateInfo(index):
