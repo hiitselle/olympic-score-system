@@ -34,7 +34,7 @@ with st.expander("Current Leader"):
 
     if(df['Worst Case'].iloc[index] == "1""2"):
         st.write(df['Name'].iloc[index] + df['Worst Case'].iloc[index] == "1")
-         st.write(df['Name'].iloc[index] + " :green[Winner]")
+         st.write(df['Name'].iloc[index] + df['Worst Case'].iloc[index] == "2")
         
     else:
         st.write(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
