@@ -33,12 +33,6 @@ with st.expander("Current Leader"):
 
     if(df['Worst Case'].iloc[index] == "1"):
         st.write(df['Name'].iloc[index] + " :green[Winner]")
-        [theme]
-primaryColor="#FF4B4B"
-backgroundColor="pink"
-secondaryBackgroundColor="#262730"
-textColor="#FAFAFA"
-font="sans serif"
     else:
         st.write(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
 
