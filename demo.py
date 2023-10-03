@@ -12,14 +12,14 @@ st.header("Laval Stats")
 with st.sidebar:
     genderSel = st.selectbox(
         "Select gender",
-        ("Females", "Males")
+        ("Semis", "Finals")
     )
 
 #@st.cache_data(ttl=60)
 def load_data(sheets_url):
     return pd.read_csv(sheets_url, dtype=str)
 
-if(genderSel=="Females"):
+if(genderSel=="Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1473230761")
 else:
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")
