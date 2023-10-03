@@ -3,8 +3,8 @@ import mdurl
 import streamlit as st
 import pandas as pd
 from  streamlit_autorefresh import st_autorefresh
-st.set_page_config(page_title="Olympic Selection Memes", layout="wide")
-st_autorefresh(interval=10000)#in ms
+st.set_page_config(page_title="Olympic Selection Stats", layout="wide")
+st_autorefresh(interval=5000)#in ms
 
 
 st.header("Olympic Memes :)")
@@ -12,14 +12,14 @@ st.header("Olympic Memes :)")
 with st.sidebar:
     genderSel = st.selectbox(
         "Select gender",
-        ("Girlies", "Boiz")
+        ("Females", "Males")
     )
 
 #@st.cache_data(ttl=60)
 def load_data(sheets_url):
     return pd.read_csv(sheets_url, dtype=str)
 
-if(genderSel=="Girlies"):
+if(genderSel=="Females"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1473230761")
 else:
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")
@@ -52,5 +52,5 @@ for x in range(len(df)):
     with st.expander(df['Name'].iloc[x]):
         generateInfo(x)
 
-st.write("Made with angst")
+st.write("Made by Elle")
 
