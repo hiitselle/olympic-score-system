@@ -42,7 +42,7 @@ def generateInfo(index):
     st.write("Current Position: " + df['Actual Ranking'].iloc[index])
     if(df['Is score complete'].iloc[index] == "1"):
         st.write("Worst Case Position: " + df['Worst Case'].iloc[index])
-        st.write("Qualified: " + df['Qualified'].iloc[index])
+        st.write(":green[Qualified: ]" + df['Qualified'].iloc[index])
     else:
 
         st.write("Points to 1st: " + df['Points to 1st'].iloc[index])
