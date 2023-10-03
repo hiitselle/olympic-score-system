@@ -32,7 +32,7 @@ with st.expander("Current Leader"):
     
     index = df['Actual Ranking'].idxmin()
 
-    if(df['Worst Case'].iloc[index] == "1""2"):
+    if(df['Worst Case'].iloc[index] == "1" and "2"):
         st.write(df['Name'].iloc[index] + df['Worst Case'].iloc[index] == "1")
         st.write(df['Name'].iloc[index] + df['Worst Case'].iloc[index] == "2")
         
