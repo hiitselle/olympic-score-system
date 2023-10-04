@@ -43,8 +43,8 @@ with st.expander("Qualified"):
     
     index = df['Actual Ranking'].idxmin()
 
-    if(df['Worst Case'].iloc[index] == "1"):
-        st.write(df['Name'].iloc[index] + ":green[first place]")
+    if(df['Qualified'].iloc[index] == "1"):
+        st.write(df['Name'].iloc[index] + ":green[Finals!]")
         
     else:
         st.write(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
