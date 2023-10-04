@@ -37,7 +37,7 @@ with st.expander("Current Leader"):
         st.success(df['Name'].iloc[index] + " Qualified!")
         
     else:
-        st.write(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
+        st.error(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
 
 
 def generateInfo(index):
