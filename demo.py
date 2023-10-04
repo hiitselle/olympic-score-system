@@ -61,7 +61,13 @@ def generateInfo(index):
         st.success(df['Name'].iloc[index] + " :green[confirmed qualified]")
                 
     else:
-        st.error(df['Name'].iloc[index] + " :red[not qualified]")        
+        st.error(df['Name'].iloc[index] + " :red[not qualified]") 
+        
+with st.sidebar:
+    genderSel = st.selectbox(
+        "Select gender",
+        ("Male Semis", "Female Semis" ," Male Final" ,"Female Finals")
+    )        
                  
 for x in range(len(df)):
     with st.expander(df['Name'].iloc[x]):
