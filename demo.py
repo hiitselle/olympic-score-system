@@ -54,10 +54,10 @@ def generateInfo(index):
         st.write("Points to 3rd: " + df['Points to 3rd'].iloc[index])
 
     if(df['Qualified'].iloc[index] == "Qualified for Finals :)"):
-        st.write(df['Name'].iloc[index] + " :green[yay]")
+        st.success(df['Name'].iloc[index] + " :green[confirmed qualified]")
                 
     else:
-        st.write(df['Name'].iloc[index] + " :red[sad times]")        
+        st.error(df['Name'].iloc[index] + " :red[not qualified]")        
                  
 for x in range(len(df)):
     with st.expander(df['Name'].iloc[x]):
