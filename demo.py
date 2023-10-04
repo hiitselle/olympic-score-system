@@ -37,7 +37,7 @@ with st.expander("Current Leader"):
         st.success(df['Name'].iloc[index] + "You did it !")
         
     else:
-        st.warnig(df['Name'].iloc[index] + "Warning")
+        st.write(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
 
 
 def generateInfo(index):
