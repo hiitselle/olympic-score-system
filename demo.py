@@ -48,7 +48,7 @@ def generateInfo(index):
             st.write(df['Name'].iloc[index] + " :green[yay]")
                 
         else:
-        st.write(df['Name'].iloc[index] + " :red[sad times]")  
+            st.write(df['Name'].iloc[index] + " :red[sad times]")  
     else:
 
         st.write("Points to 1st: " + df['Points to 1st'].iloc[index])
