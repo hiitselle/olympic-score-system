@@ -13,7 +13,7 @@ st.header(":violet[Laval Stats]")
 with st.sidebar:
     genderSel = st.selectbox(
         "Select gender",
-        ("Male Semis", "Female Semis" ," Male Final" "Female Finals")
+        ("Male Semis", "Female Semis" ," Male Final" ,"Female Finals")
     )
 
 #@st.cache_data(ttl=60)
