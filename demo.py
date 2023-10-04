@@ -22,6 +22,7 @@ def load_data(sheets_url):
 
 if(genderSel=="Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1473230761")
+    
 else:
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")
 df = df.astype(str)
@@ -44,11 +45,7 @@ def generateInfo(index):
     if(df['Is score complete'].iloc[index] == "1"):
         st.write("Worst Case Position: " + df['Worst Case'].iloc[index])
         st.write("Qualified: " + df['Qualified'].iloc[index])
-        if(df['Qualified'].iloc[index] == "Qualified for Finals :)"):
-            st.write(df['Name'].iloc[index] + " :green[yay]")
-                
-        else:
-            st.write(df['Name'].iloc[index] + " :red[sad times]")  
+     
     else:
 
         st.write("Points to 1st: " + df['Points to 1st'].iloc[index])
