@@ -33,12 +33,9 @@ with st.expander("Current Leader"):
     index = df['Actual Ranking'].idxmin()
 
     if(df['Worst Case'].iloc[index] == "1"):
-        st.write(df['Name'].iloc[index] + ":green[first place]")
-        
+        st.write(df['Name'].iloc[index] + " :green[Winner]")
     else:
         st.write(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
-
-
 
 
 def generateInfo(index):
@@ -58,4 +55,3 @@ for x in range(len(df)):
         generateInfo(x)
 
 st.write("Made by Elle")
-
