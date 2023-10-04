@@ -42,13 +42,12 @@ with st.expander("Current Leader"):
 with st.expander("Qualified"):
     
     index = df['Actual Ranking'].idxmin()
-
-    if(df['Qualified'].iloc[index] == "1"):
-        st.write(df['Name'].iloc[index] + df['Qualified 1'].iloc[index])
-        st.write(df['Name'].iloc[index] + df['Qualified 2'].iloc[index])
-        st.write((df['Name'].iloc[index] + df['Qualified 3'].iloc[index])
-    else:   
-        st.write((df['Name'].iloc[index] + "red[not qualified]")
+    
+    if(df['Qualified 1'].iloc[index] == "1"):
+        st.write(df['Name'].iloc[index] + ":green[first place]")
+        
+    else:
+        st.write(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
 
         
 
