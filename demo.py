@@ -44,7 +44,9 @@ with st.expander("Qualified"):
     index = df['Actual Ranking'].idxmin()
 
     if(df['Qualified'].iloc[index] == "1"):
-        st.write(df['Name'].iloc[index] + ":green[Finals!]")
+        st.write("Qualified 1: " + df['Qualified 1'].iloc[index])
+        st.write("Qualified 2: " + df['Qualified 2'].iloc[index])
+        st.write("Qualified 3: " + df['Qualified 3'].iloc[index])
         
     else:
         st.write(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
