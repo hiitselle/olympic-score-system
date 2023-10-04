@@ -6,8 +6,16 @@ from  streamlit_autorefresh import st_autorefresh
 st.set_page_config(page_title="Olympic Selection Stats", layout="wide")
 st_autorefresh(interval=5000)#in ms
 
-[theme]
-backgroundColor = "#F0F0F0"
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://www.example.com/image.jpg");
+    }
+   </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.header(":violet[Laval Stats]")
 
