@@ -47,7 +47,8 @@ with st.expander("Qualified"):
         st.write(df['Name'].iloc[index] + df['Qualified 1'].iloc[index])
         st.write(df['Name'].iloc[index] + df['Qualified 2'].iloc[index])
         st.write((df['Name'].iloc[index] + df['Qualified 3'].iloc[index])
-        
+    else:   
+        st.write((df['Name'].iloc[index] + "red[not qualified]")
 
         
 
