@@ -10,7 +10,7 @@ st.markdown(
     """
     <style>
     .reportview-container {
-        background: url("https://www.example.com/image.jpg");
+        background: url("https://www.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_13223496.htm#query=background&position=3&from_view=keyword&track=sph");
     }
    </style>
     """,
