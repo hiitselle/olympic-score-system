@@ -8,7 +8,7 @@ st_autorefresh(interval=5000)#in ms
 
 
 
-st.header(":blue[Laval Stats]")
+st.header(":violet[Laval Stats]")
 
 with st.sidebar:
     genderSel = st.selectbox(
