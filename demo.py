@@ -50,7 +50,7 @@ def generateInfo(index):
         st.write("Points to 2nd: " + df['Points to 2nd'].iloc[index])
         st.write("Points to 3rd: " + df['Points to 3rd'].iloc[index])
 
-    if(df['Qualified'].iloc[index] == "Qualified for finals :)"):
+    if(df['Qualified'].iloc[index] == "Qualified for Finals :)"):
         st.write(df['Name'].iloc[index] + " :green[yay]")
                 
     else:
