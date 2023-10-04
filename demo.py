@@ -44,6 +44,11 @@ def generateInfo(index):
     if(df['Is score complete'].iloc[index] == "1"):
         st.write("Worst Case Position: " + df['Worst Case'].iloc[index])
         st.write("Qualified: " + df['Qualified'].iloc[index])
+        if(df['Qualified'].iloc[index] == "Qualified for Finals :)"):
+            st.write(df['Name'].iloc[index] + " :green[yay]")
+                
+        else:
+        st.write(df['Name'].iloc[index] + " :red[sad times]")  
     else:
 
         st.write("Points to 1st: " + df['Points to 1st'].iloc[index])
