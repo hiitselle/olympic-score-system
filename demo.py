@@ -32,10 +32,13 @@ with st.expander("Current Leader"):
     
     index = df['Actual Ranking'].idxmin()
 
-    if(or(df['Worst Case'].iloc[index] == "1","2","3","4"):
+    if(df['Worst Case'].iloc[index] == "1"):
         st.write(df['Name'].iloc[index] + ":green[first place]")
+    elif(df['Worst Case'].iloc[index] == "2"):    
         st.write(df['Name'].iloc[index] + ":green[2 place]")
+    elif(df['Worst Case'].iloc[index] == "3"):        
         st.write(df['Name'].iloc[index] + ":green[3 place]")
+    elif(df['Worst Case'].iloc[index] == "4"):        
         st.write(df['Name'].iloc[index] + ":green[4 place]")
         
     else:
