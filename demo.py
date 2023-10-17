@@ -130,8 +130,74 @@ for x in range(len(df)):
 if(genderSel=="Female Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=28593922")
  
-def load_data(sheets_url):
-    return pd.read_csv(sheets_url, dtype=str)
+
+with st.expander("Current Leader"):
+    
+    index = df['Actual Ranking'].idxmin()
+
+    if(df['Worst Case'].iloc[index] == "1"):
+        st.success(df['Name'].iloc[index] + " Qualified!")
+        ch_bg_to_green()
+    else:
+        st.error(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
+
+
+def generateInfo(index):
+    st.write("Current Points: " + df['TotalScore'].iloc[index])
+    st.write("Current Position: " + df['Actual Ranking'].iloc[index])
+    if(df['Is score complete'].iloc[index] == "1"):
+        st.write("Worst Case Position: " + df['Worst Case'].iloc[index])
+        
+     
+    else:
+
+        st.write("Points to 1st: " + df['Points to 1st'].iloc[index])
+        st.write("Points to 2nd: " + df['Points to 2nd'].iloc[index])
+        st.write("Points to 3rd: " + df['Points to 3rd'].iloc[index])
+
+    if(df['Qualified'].iloc[index] == "Qualified for Finals :)"):
+        
+ 
+        #st.write(index)
+        st.success(df['Name'].iloc[index] + " :green[confirmed qualified]")
+        st.markdown(
+                    """
+                    <style>
+    
+                    div[data-testid="stExpander"]:nth-of-type(""" + str(index+5) + """) {
+                         background: 	palegreen;
+                         color: black; # Expander content color
+                    }
+
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                    )
+    else:
+        #st.write(index)
+        
+        st.error(df['Name'].iloc[index] + " :red[not qualified]") 
+        st.markdown(
+                    """
+                    <style>
+    
+                    div[data-testid="stExpander"]:nth-of-type(""" + str(index+5) + """) {
+                         background: 	#ffcccb;
+                         color: black; # Expander content color
+                    }
+
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                    )
+     
+  
+               
+   
+                 
+for x in range(len(df)):
+    with st.expander(df['Name'].iloc[x]):
+        generateInfo(x)
  
 if(genderSel=="Female Finals"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")  
