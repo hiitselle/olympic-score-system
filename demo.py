@@ -1,10 +1,38 @@
-
+import streamlit.components.v1 as components
 import mdurl
 import streamlit as st
 import pandas as pd
 from  streamlit_autorefresh import st_autorefresh
 st.set_page_config(page_title="Olympic Selection Stats", layout="wide")
 st_autorefresh(interval=5000)#in ms
+
+
+def ch_bg_to_green():
+ st.markdown(
+    """
+    <style>
+    div[data-testid="stAppViewContainer"] {
+           position: absolute;
+           background: palegreen;
+           color: rgb(49, 51, 63);
+           inset: 0px;
+           overflow: hidden;
+    }
+    header[data-testid="stHeader"] {
+               position: fixed;
+               top: 0px;
+               left: 0px;
+               right: 0px;
+               height: 2.875rem;
+               background: palegreen;
+               outline: none;
+               z-index: 999990;
+               display: block;
+    }   
+   </style>
+    """,
+    unsafe_allow_html=True
+ )
 
 st.markdown(
     """
@@ -48,7 +76,7 @@ with st.expander("Current Leader"):
 
     if(df['Worst Case'].iloc[index] == "1"):
         st.success(df['Name'].iloc[index] + " Qualified!")
-        
+        ch_bg_to_green()
     else:
         st.error(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
 
@@ -67,14 +95,44 @@ def generateInfo(index):
         st.write("Points to 3rd: " + df['Points to 3rd'].iloc[index])
 
     if(df['Qualified'].iloc[index] == "Qualified for Finals :)"):
-        st.success(df['Name'].iloc[index] + " :green[confirmed qualified]")
-                
-    else:
-        st.error(df['Name'].iloc[index] + " :red[not qualified]") 
         
+ 
+        #st.write(index)
+        st.success(df['Name'].iloc[index] + " :green[confirmed qualified]")
+        st.markdown(
+                    """
+                    <style>
+    
+                    div[data-testid="stExpander"]:nth-of-type(""" + str(index+5) + """) {
+                         background: 	palegreen;
+                         color: black; # Expander content color
+                    }
+
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                    )
+    else:
+        #st.write(index)
+        
+        st.error(df['Name'].iloc[index] + " :red[not qualified]") 
+        st.markdown(
+                    """
+                    <style>
+    
+                    div[data-testid="stExpander"]:nth-of-type(""" + str(index+5) + """) {
+                         background: 	#ffcccb;
+                         color: black; # Expander content color
+                    }
+
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                    )
                  
 for x in range(len(df)):
     with st.expander(df['Name'].iloc[x]):
         generateInfo(x)
 
 st.write("Made by Elle")
+
