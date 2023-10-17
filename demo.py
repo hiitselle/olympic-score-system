@@ -47,6 +47,7 @@ st.markdown(
 
 st.header(":violet[Laval Stats]")
 
+
 with st.sidebar:
     genderSel = st.selectbox(
         "Semis",
@@ -210,7 +211,7 @@ for x in range(len(df)):
         generateInfo(x)
 
 
-add_selectbox = st.sidebar.selectbox(
+with add_selectbox = st.sidebar.selectbox(
     "Finals",
     ("Female Finals", "Male Finals")
 )
