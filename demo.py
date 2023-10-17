@@ -129,7 +129,8 @@ def generateInfo(index):
                     """,
                     unsafe_allow_html=True
                     )
-     if(df['Qualified'].iloc[index] == "Podium Garentee!!!!"):
+     
+    if(df['Qualified'].iloc[index] == "Podium Garentee!!!!"):
         
  
         #st.write(index)
