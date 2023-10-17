@@ -61,7 +61,7 @@ if(genderSel=="Male Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1473230761")
 elif(genderSel=="Female Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1802658245")
-with st.expander("Current Leader"):
+ with st.expander("Current Leader"):
     
     index = df['Actual Ranking'].idxmin()
 
@@ -72,7 +72,7 @@ with st.expander("Current Leader"):
         st.error(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
 
 
-def generateInfo(index):
+ def generateInfo(index):
     st.write("Current Points: " + df['TotalScore'].iloc[index])
     st.write("Current Position: " + df['Actual Ranking'].iloc[index])
     if(df['Is score complete'].iloc[index] == "1"):
@@ -125,7 +125,7 @@ def generateInfo(index):
                
    
                  
-for x in range(len(df)):
+ for x in range(len(df)):
     with st.expander(df['Name'].iloc[x]):
         generateInfo(x)
 elif(genderSel=="Female Finals"):
