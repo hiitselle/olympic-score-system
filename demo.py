@@ -170,9 +170,7 @@ for x in range(len(df)):
     with st.expander(df['Name'].iloc[x]):
         generateInfo(x)
 
-import streamlit as st
 
-# Using object notation
 add_selectbox = st.sidebar.selectbox(
     "Finals",
     ("Female Finals", "Male Finals")
