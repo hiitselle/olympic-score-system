@@ -129,41 +129,8 @@ def generateInfo(index):
                     """,
                     unsafe_allow_html=True
                     )
-     if(df['Qualified'].iloc[index] == "Podium Garentee!!!!"):
-        
- 
-        #st.write(index)
-        st.success(df['Name'].iloc[index] + " :green[medal]")
-        st.markdown(
-                    """
-                    <style>
-    
-                    div[data-testid="stExpander"]:nth-of-type(""" + str(index+5) + """) {
-                         background: 	palegreen;
-                         color: black; # Expander content color
-                    }
-
-                    </style>
-                    """,
-                    unsafe_allow_html=True
-                    )
-    else:
-        #st.write(index)
-        
-        st.error(df['Name'].iloc[index] + " :red[no medal]") 
-        st.markdown(
-                    """
-                    <style>
-    
-                    div[data-testid="stExpander"]:nth-of-type(""" + str(index+5) + """) {
-                         background: 	#ffcccb;
-                         color: black; # Expander content color
-                    }
-
-                    </style>
-                    """,
-                    unsafe_allow_html=True
-                    )
+     
+   
                  
 for x in range(len(df)):
     with st.expander(df['Name'].iloc[x]):
