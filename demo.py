@@ -54,9 +54,6 @@ with st.sidebar:
         ("Male Semis", "Female Semis" ," Male Final" ,"Female Finals")
     )
 
-#@st.cache_data(ttl=60)
-def load_data(sheets_url):
-    return pd.read_csv(sheets_url, dtype=str)
 
 if(genderSel=="Male Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1473230761")
@@ -129,8 +126,7 @@ for x in range(len(df)):
     with st.expander(df['Name'].iloc[x]):
         generateInfo(x)
      
-def load_data(sheets_url):
-    return pd.read_csv(sheets_url, dtype=str)
+
 if(genderSel=="Female Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=28593922")
  
