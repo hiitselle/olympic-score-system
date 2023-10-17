@@ -170,26 +170,20 @@ for x in range(len(df)):
     with st.expander(df['Name'].iloc[x]):
         generateInfo(x)
 
+import streamlit as st
+
+# Using object notation
+add_selectbox = st.sidebar.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone")
+)
+
+# Using "with" notation
 with st.sidebar:
-    genderSel = st.selectbox(
-        "Select gender",
-        ("Male Semis", "Female Semis" ," Male Final" ,"Female Finals")
+    add_radio = st.radio(
+        "Choose a shipping method",
+        ("Standard (5-15 days)", "Express (2-5 days)")
     )
-
-#@st.cache_data(ttl=60)
-def load_data(sheets_url):
-    return pd.read_csv(sheets_url, dtype=str)
-
-if(genderSel=="Male Semis"):
-    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1473230761")
-elif(genderSel=="Female Semis"):
-    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1802658245")
-elif(genderSel=="Female Finals"):
-    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")  
-    
-else:
-    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=28593922")
-df = df.astype(str)
 
 st.write("Made by Elle")
 
