@@ -61,16 +61,7 @@ if(genderSel=="Male Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1473230761")
 elif(genderSel=="Female Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1802658245")
-elif(genderSel=="Female Finals"):
-    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")  
-    
-else:
-    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=28593922")
-df = df.astype(str)
-
-#st.dataframe(data=df, use_container_width=True)
-
-with st.expander("Current Leader"):
+ with st.expander("Current Leader"):
     
     index = df['Actual Ranking'].idxmin()
 
@@ -129,6 +120,49 @@ def generateInfo(index):
                     """,
                     unsafe_allow_html=True
                     )
+     
+  
+               
+   
+                 
+for x in range(len(df)):
+    with st.expander(df['Name'].iloc[x]):
+        generateInfo(x)
+elif(genderSel=="Female Finals"):
+    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")  
+    
+else:
+    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=28593922")
+df = df.astype(str)
+
+#st.dataframe(data=df, use_container_width=True)
+
+with st.expander("Current Leader"):
+    
+    index = df['Actual Ranking'].idxmin()
+
+    if(df['Worst Case'].iloc[index] == "1"):
+        st.success(df['Name'].iloc[index] + " Qualified!")
+        ch_bg_to_green()
+    else:
+        st.error(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
+
+
+def generateInfo(index):
+    st.write("Current Points: " + df['TotalScore'].iloc[index])
+    st.write("Current Position: " + df['Actual Ranking'].iloc[index])
+    if(df['Is score complete'].iloc[index] == "1"):
+        st.write("Worst Case Position: " + df['Worst Case'].iloc[index])
+        
+     
+    else:
+
+        st.write("Points to 1st: " + df['Points to 1st'].iloc[index])
+        st.write("Points to 2nd: " + df['Points to 2nd'].iloc[index])
+        st.write("Points to 3rd: " + df['Points to 3rd'].iloc[index])
+
+
+
      
     if(df['Qualified'].iloc[index] == "Podium Garentee!!!!"):
         
