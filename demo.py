@@ -131,10 +131,7 @@ def generateInfo(index):
                     """,
                     unsafe_allow_html=True
                     )
-    else:
-        #st.write(index)
-        
-        st.error(df['Name'].iloc[index] + " :red[not qualified]") 
+  
         st.markdown(
                     """
                     <style>
