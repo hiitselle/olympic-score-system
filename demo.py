@@ -125,7 +125,7 @@ def generateInfo(index):
                     <style>
     
                     div[data-testid="stExpander"]:nth-of-type(""" + str(index+5) + """) {
-                         background: 	#50C878;
+                         background: 	#90EE90;
                          color: black; # Expander content color
                     }
 
