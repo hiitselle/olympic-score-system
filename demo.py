@@ -50,7 +50,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.header(":violet[Laval Stats]")
+st.header("**Laval Stats**")
 
 with st.sidebar:
     genderSel = st.selectbox(
