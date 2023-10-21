@@ -48,3 +48,5 @@ pandas
 mdurl
 streamlit
 streamlit-javascript
+plotly
+
