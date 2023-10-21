@@ -119,7 +119,7 @@ def generateInfo(index):
  
         #st.write(index)
         st.success(df['Name'].iloc[index] + " :green[confirmed qualified]")
-        st.snow()
+        
         st.markdown(
                     """
                     <style>
