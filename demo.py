@@ -95,7 +95,7 @@ with st.expander("Current Leader"):
     index = df['Actual Ranking'].idxmin()
 
     if(df['Worst Case'].iloc[index] == "1"):
-        st.success(df['Name'].iloc[index] + " Qualified!")
+        st.success(df['Name'].iloc[index] + " WINNER WINNER CHICKEN DINNER!")
         ch_bg_to_green()
     else:
         st.error(df['Name'].iloc[index] + " :red[is leading & is Beatable!]")
