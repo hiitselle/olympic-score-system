@@ -18,8 +18,8 @@ def ch_bg_to_green():
     <style>
     div[data-testid="stAppViewContainer"] {
            position: absolute;
-           background: #d4af37;
-           color: rgb(212, 175, 55);
+           background: #daa520;
+           color: rgb(218, 165, 32);
            inset: 0px;
            overflow: hidden;
     }
