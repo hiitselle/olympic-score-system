@@ -10,7 +10,7 @@ st_autorefresh(interval=5000)#in ms
 
 
 def ch_bg_to_green():
- st.ballons(
+ st.markdown(
     """
     <style>
     div[data-testid="stAppViewContainer"] {
