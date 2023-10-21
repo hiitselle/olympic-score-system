@@ -1,4 +1,6 @@
 import streamlit.components.v1 as components
+import plotly.express as px
+import plotly.graph_objects as go
 import mdurl
 import streamlit as st
 import pandas as pd
@@ -61,15 +63,28 @@ if(genderSel=="Male Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1473230761")
 elif(genderSel=="Female Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1802658245")
-elif(genderSel=="Female Finals"):
-    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")  
+elif(genderSel=="Male Final"):
+    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=245521672")    
     
 else:
-    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=28593922")
+    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")
 df = df.astype(str)
 
 #st.dataframe(data=df, use_container_width=True)
-
+df_metric = df.copy()
+df_metric['TotalScore'] = df_metric['TotalScore'].astype('float')
+df_metric = df_metric.sort_values(by='TotalScore', ascending=True)
+df_metric = df_metric.tail(8)
+df_metric['color'] = ''
+for z in range(len(df_metric)):
+    if(df_metric['Qualified'].iloc[z] == "Qualified for Finals :)") or (df_metric['Qualified'].iloc[z] == "Podium Garentee!!!!") :
+        df_metric['color'].iloc[z] = 'green'
+        #st.write(df_metric['color'].iloc[z])
+    else:
+        df_metric['color'].iloc[z] = 'red'
+#st.dataframe(data=df_metric, use_container_width=True)
+plot_assym = go.Figure(go.Bar(x=df_metric['TotalScore'], y=df_metric["Name"], orientation='h',text=df_metric['TotalScore'].astype('str'),marker={'color': df_metric['color']}))
+st.sidebar.plotly_chart(plot_assym)
 with st.expander("Current Leader"):
     
     index = df['Actual Ranking'].idxmin()
@@ -94,7 +109,7 @@ def generateInfo(index):
         st.write("Points to 2nd: " + df['Points to 2nd'].iloc[index])
         st.write("Points to 3rd: " + df['Points to 3rd'].iloc[index])
 
-    if(df['Qualified'].iloc[index] == "Qualified for Finals :)"):
+    if(df['Qualified'].iloc[index] == "Qualified for Finals :)") or (df['Qualified'].iloc[index] == "Podium Garentee!!!!") :
         
  
         #st.write(index)
@@ -129,12 +144,11 @@ def generateInfo(index):
                     """,
                     unsafe_allow_html=True
                     )
-     
-   
                  
 for x in range(len(df)):
     with st.expander(df['Name'].iloc[x]):
         generateInfo(x)
 
 st.write("Made by Elle")
+
 
