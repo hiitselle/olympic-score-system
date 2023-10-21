@@ -106,7 +106,7 @@ def generateInfo(index):
     st.write("Current Position: " + df['Actual Ranking'].iloc[index])
     if(df['Is score complete'].iloc[index] == "1"):
         st.write("Worst Case Position: " + df['Worst Case'].iloc[index])
-        
+        st.write("Qualified: " + df['Qualified'].iloc[index])
      
     else:
 
@@ -117,8 +117,6 @@ def generateInfo(index):
     if(df['Qualified'].iloc[index] == "Qualified for Finals :)") or (df['Qualified'].iloc[index] == "Podium Garentee!!!!") :
         
  
-        #st.write(index)
-        st.success(df['Name'].iloc[index] + " :green[confirmed qualified]")
         
         st.markdown(
                     """
