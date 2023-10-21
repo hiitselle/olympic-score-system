@@ -117,6 +117,8 @@ def generateInfo(index):
     if(df['Qualified'].iloc[index] == "Qualified for Finals :)") or (df['Qualified'].iloc[index] == "Podium Garentee!!!!") :
         
  
+        #st.write(index)
+        st.success(df['Name'].iloc[index] + " :green[...]")
         
         st.markdown(
                     """
@@ -131,7 +133,10 @@ def generateInfo(index):
                     """,
                     unsafe_allow_html=True
                     )
-  
+    else:
+        #st.write(index)
+        
+        st.error(df['Name'].iloc[index] + " :red[...]") 
         st.markdown(
                     """
                     <style>
