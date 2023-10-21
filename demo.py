@@ -8,10 +8,10 @@ from  streamlit_autorefresh import st_autorefresh
 st.set_page_config(page_title="Olympic Selection Stats", layout="wide")
 st_autorefresh(interval=5000)#in ms
 
-st.balloons()
+
 
 def ch_bg_to_green():
- 
+ st.balloons()
 
  st.markdown(
     """
