@@ -119,12 +119,13 @@ def generateInfo(index):
  
         #st.write(index)
         st.success(df['Name'].iloc[index] + " :green[confirmed qualified]")
+        st.snow()
         st.markdown(
                     """
                     <style>
     
                     div[data-testid="stExpander"]:nth-of-type(""" + str(index+5) + """) {
-                         background: 	pastelgreen;
+                         background: 	lightblue;
                          color: black; # Expander content color
                     }
 
