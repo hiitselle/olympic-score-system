@@ -67,7 +67,7 @@ elif(genderSel=="Male Final"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=245521672")    
     
 else:
-    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")
+    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=28593922")
 df = df.astype(str)
 
 #st.dataframe(data=df, use_container_width=True)
@@ -151,6 +151,5 @@ for x in range(len(df)):
 
 st.write("Made by Elle")
 
-st.write("Made by Elle")
 
 
