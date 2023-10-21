@@ -10,7 +10,7 @@ st_autorefresh(interval=5000)#in ms
 
 
 def ch_bg_to_green():
- st.balloons(
+ 
 
  st.markdown(
     """
@@ -36,7 +36,7 @@ def ch_bg_to_green():
    </style>
     """,
     unsafe_allow_html=True
- ))
+ )
 
 st.markdown(
     """
