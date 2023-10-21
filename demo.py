@@ -52,7 +52,7 @@ st.header(":violet[Laval Stats]")
 with st.sidebar:
     genderSel = st.selectbox(
         "Select gender",
-        ("Male Semis", "Female Semis" ," Male Final" ,"Female Finals")
+        ("Male Semis", "Female Semis" ,"Male Finals" ,"Female Finals")
     )
 
 #@st.cache_data(ttl=60)
@@ -63,8 +63,8 @@ if(genderSel=="Male Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1473230761")
 elif(genderSel=="Female Semis"):
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=1802658245")
-elif(genderSel==" Male Final"):
-    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=245521672")    
+elif(genderSel=="Male Finals"):
+    df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=245521672")   
     
 else:
     df = load_data("https://docs.google.com/spreadsheets/d/12i_7HsoRs74S0FtzN04Uu1WZeToU6AoyOidHAL6WcGE/export?format=csv&gid=919701499")
