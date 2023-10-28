@@ -113,6 +113,8 @@ def generateInfo(index):
         st.write("Points to 1st: " + df['Points to 1st'].iloc[index])
         st.write("Points to 2nd: " + df['Points to 2nd'].iloc[index])
         st.write("Points to 3rd: " + df['Points to 3rd'].iloc[index])
+        st.write("Points to 8th: " + df['8th place'].iloc[index])
+     
 
     if(df['Qualified'].iloc[index] == "Qualified for Finals :)") or (df['Qualified'].iloc[index] == "Podium Garentee!!!!") :
         
