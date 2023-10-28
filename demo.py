@@ -110,10 +110,12 @@ def generateInfo(index):
         st.write("Qualified: " + df['Qualified'].iloc[index])
      
     else:
-
+     
+        st.write("min needed: " + df['min needed'].iloc[index])
         st.write("Points to 1st: " + df['Points to 1st'].iloc[index])
         st.write("Points to 2nd: " + df['Points to 2nd'].iloc[index])
         st.write("Points to 3rd: " + df['Points to 3rd'].iloc[index])
+        
         
      
 
