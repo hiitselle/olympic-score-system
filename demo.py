@@ -121,7 +121,7 @@ def generateInfo(index):
         
  
         #st.write(index)
-        st.success(df['quali'].iloc[index] + " :green[...]")
+        st.success(df['Name'].iloc[index] + " :green[...]")
         
         st.markdown(
                     """
@@ -139,7 +139,7 @@ def generateInfo(index):
     else:
         #st.write(index)
         
-        st.error(df['quali'].iloc[index] + " :red[...]") 
+        st.error(df['Name'].iloc[index] + " :red[...]") 
         st.markdown(
                     """
                     <style>
