@@ -104,7 +104,7 @@ with st.expander("Current Leader"):
 def generateInfo(index):
     st.write("Current Points: " + df['TotalScore'].iloc[index])
     st.write("Current Position: " + df['Actual Ranking'].iloc[index])
-    st.write("Points to 8th: " + df['8th place'].iloc[index])
+    st.write("Points to 8th: " + df['quali'].iloc[index])
     if(df['Is score complete'].iloc[index] == "1"):
         st.write("Worst Case Position: " + df['Worst Case'].iloc[index])
         st.write("Qualified: " + df['Qualified'].iloc[index])
