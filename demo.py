@@ -118,7 +118,7 @@ def generateInfo(index):
         
  
         #st.write(index)
-        st.success(df['Name'].iloc[index] + " :green[...]")
+        st.success(df['Name'].iloc[index] + df['8th place '].iloc[index])
         
         st.markdown(
                     """
@@ -136,7 +136,7 @@ def generateInfo(index):
     else:
         #st.write(index)
         
-        st.error(df['Name'].iloc[index] + " :red[...]") 
+        st.error(df['Name'].iloc[index] + df['8th place '].iloc[index]) 
         st.markdown(
                     """
                     <style>
