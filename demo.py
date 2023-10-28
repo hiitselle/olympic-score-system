@@ -111,7 +111,7 @@ def generateInfo(index):
      
     else:
      
-        st.write("min needed: " + df['min needed'].iloc[index])
+        st.write("min needed for 8th: " + df['min needed'].iloc[index])
         st.write("Points to 1st: " + df['Points to 1st'].iloc[index])
         st.write("Points to 2nd: " + df['Points to 2nd'].iloc[index])
         st.write("Points to 3rd: " + df['Points to 3rd'].iloc[index])
